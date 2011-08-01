@@ -69,4 +69,4 @@ clear
 
 # Git tab completion
 source ~/git-completion.bash
-alias git-info='. /Users/$USER/git-info.sh'
+alias git-info='. /home/$USER/git-info.sh'

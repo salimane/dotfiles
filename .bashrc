@@ -45,9 +45,14 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export MOZ_DISABLE_PANGO=1
 
+#saves a timestamp for each command
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 
 # erase duplicate lines from the history; ignore lines that begin with a space
 HISTCONTROL=erasedups:ignorespace
+
+#Write your commands to the history file as soon as you use them, not at the end of a session
+PROMPT_COMMAND='history -a'
 
 # extend the history (default 500)
 HISTSIZE=10000
@@ -110,3 +115,4 @@ clear
 # Git tab completion
 source ~/git-completion.bash
 alias git-info='. /home/$USER/git-info.sh'
+

@@ -31,6 +31,15 @@ fi
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
+alias 'tf=tail -f'
+alias 'grep=grep --colour'
+alias "tree=tree -A -I 'CVS|*~'"
+alias 'rm=rm -i'
+alias 'mv=mv -i'
+alias 'cp=cp -i'
+alias 'mkdir=mkdir -p'
+alias 'dus=du -ms * | sort -n'
+alias 'cd..=cd ..'
 alias acs="sudo apt-cache search"
 alias acsh="sudo apt-cache show"
 alias agd="sudo apt-get dist-upgrade"
@@ -98,6 +107,9 @@ $ "
 }
 prompt
 
+
+# MySQL prompt
+export MYSQL_PS1="mysql \u@\h [\d]\n>"
 
 #android source compilation
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/

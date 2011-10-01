@@ -184,7 +184,7 @@ zstyle ':vcs_info:*' unstagedstr "%F{yellow}●%f" # %u
 zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # %c
 zstyle ':vcs_info:*' actionformats "[$green%b%c$default/$red%a$default:$blue%s$default]"
 zstyle ':vcs_info:*' branchformat '%b'    
-zstyle ':vcs_info:(hg*|git*):*' actionformats "[$green%b%.5i%c$default/$red%a$default:$blue%s$default]"
+zstyle ':vcs_info:(hg*|git*):*' actionformats "[$green%b%c$default/$red%a$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
 FORCE_RUN_VCS_INFO=1
 # Must run vcs_info when changing directories.
 prompt_chpwd() {
@@ -225,9 +225,9 @@ parse_git_status() {
 ###################
 prompt_precmd() {
   if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-    zstyle ':vcs_info:*' formats "[$green%b$default:$yellow%.5i$default:%u%c$(parse_git_status)$default:$blue%s$default]"
+    zstyle ':vcs_info:*' formats "[$green%b$default%u%c$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
   } else {
-    zstyle ':vcs_info:*' formats "[$green%b$default:$yellow%.5i$default:%u%c$red✗$(parse_git_status)$default:$blue%s$default]"
+    zstyle ':vcs_info:*' formats "[$green%b$default%u%c$red✗$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
   }
   if [[ -n $RUN_VCS_INFO ]]; then
     vcs_info

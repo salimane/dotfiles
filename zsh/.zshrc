@@ -176,6 +176,23 @@ if [[ -d ~/.zsh/functions/vcs_info ]]; then
         ~/.zsh/functions/vcs_info/Backends
         $fpath)
 fi
+parse_git_status() {
+  local st="$(git status 2>/dev/null)"
+  if [[ -n "$st" ]]; then
+    local -a arr
+    arr=(${(f)st})
+    if [[ $arr[2] =~ 'Your branch is' ]]; then
+      if [[ $arr[2] =~ 'ahead' ]]; then
+        echo "$green↑"
+      elif [[ $arr[2] =~ 'diverged' ]]; then
+        echo "$red↕"
+      else
+        echo "$yellow↓"
+      fi
+    fi
+  fi
+}
+
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg svn bzr
 zstyle ':vcs_info:(hg*|git*):*' get-revision true
@@ -202,22 +219,6 @@ function virtualenv_info {
   [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 parse_git_dirty(){ [[ -n $(git status -s 2> /dev/null) ]] && echo "✗"; }
-parse_git_status() {
-  local st="$(git status 2>/dev/null)"
-  if [[ -n "$st" ]]; then
-    local -a arr
-    arr=(${(f)st})
-    if [[ $arr[2] =~ 'Your branch is' ]]; then
-      if [[ $arr[2] =~ 'ahead' ]]; then
-        echo "$green↑"
-      elif [[ $arr[2] =~ 'diverged' ]]; then
-        echo "$red↕"
-      else
-        echo "$yellow↓"
-      fi
-    fi
-  fi
-}
 
 
 ###################

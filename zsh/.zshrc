@@ -71,6 +71,7 @@ alias acsh="sudo apt-cache show"
 alias agd="sudo apt-get dist-upgrade"
 alias agi="sudo apt-get install"
 alias agu="sudo apt-get update"
+alias agud="sudo apt-get update && sudo apt-get dist-upgrade"
 alias addkey="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys"
 alias info='info --vi-keys'
 alias less='less --tab=4 --no-init --LONG-PROMPT --ignore-case --squeeze-blank-line -R'
@@ -197,8 +198,8 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg svn bzr
 zstyle ':vcs_info:(hg*|git*):*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr "%F{yellow}●%f" # %u
-zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # %c
+zstyle ':vcs_info:*' unstagedstr "$yellow●$default" # %u
+zstyle ':vcs_info:*' stagedstr "$green●$default" # %c
 zstyle ':vcs_info:*' actionformats "[$green%b%c$default/$red%a$default:$blue%s$default]"
 zstyle ':vcs_info:*' branchformat '%b'
 zstyle ':vcs_info:(hg*|git*):*' actionformats "[$green%b%c$default/$red%a$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
@@ -237,14 +238,14 @@ prompt_precmd() {
   fi
 
   PROMPT="
-%{$fg_bold[blue]%}%n%{$reset_color%} %Bat%b %{$fg_bold[yellow]%}%m%{$reset_color%} %Bin%b %{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}
-$(virtualenv_info)$(prompt_char) %B%{$fg[gray]%}"
+$blue%n%{$reset_color%} at $yellow%m%{$reset_color%} in $cyan${PWD/#$HOME/~}%{$reset_color%}
+$(virtualenv_info)$(prompt_char) $gray"
 
   #### right prompt
   RPROMPT="${vcs_info_msg_0_}"
 
   ### My prompt for loops
-  PROMPT2="%B%_> "
+  PROMPT2="%_> "
 
   ### My prompt for selections
   PROMPT3='{ … } '

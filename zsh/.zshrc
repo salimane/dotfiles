@@ -143,7 +143,7 @@ unsetopt correctall
 setopt prompt_subst auto_resume nobeep noclobber auto_cd auto_pushd pushd_ignore_dups correct list_packed noautoremoveslash nolistbeep extended_glob interactive_comments
 autoload zed zcalc tetris ignoreeof autopushd pushdignoredups pushdminus
 # Be paranoid, new files are readable/writable by me only.
-umask 077
+#umask 077
 
 
 #####################
@@ -200,7 +200,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr "%F{yellow}●%f" # %u
 zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # %c
 zstyle ':vcs_info:*' actionformats "[$green%b%c$default/$red%a$default:$blue%s$default]"
-zstyle ':vcs_info:*' branchformat '%b'    
+zstyle ':vcs_info:*' branchformat '%b'
 zstyle ':vcs_info:(hg*|git*):*' actionformats "[$green%b%c$default/$red%a$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
 FORCE_RUN_VCS_INFO=1
 # Must run vcs_info when changing directories.
@@ -242,16 +242,16 @@ $(virtualenv_info)$(prompt_char) %B%{$fg[gray]%}"
 
   #### right prompt
   RPROMPT="${vcs_info_msg_0_}"
-  
+
   ### My prompt for loops
   PROMPT2="%B%_> "
-  
+
   ### My prompt for selections
   PROMPT3='{ … } '
 
   # MySQL prompt
   export MYSQL_PS1="mysql \u@\h [\d]\n>"
-}    
+}
 add-zsh-hook precmd prompt_precmd
 
 
@@ -332,9 +332,8 @@ zle -C complete-files complete-word _generic
 zstyle ':completion:complete-files:*' completer _files
 bindkey '^F' complete-files
 
-# Colorize stderr in red. Very useful when looking for errors. 
+# Colorize stderr in red. Very useful when looking for errors.
 exec 2>>(while read -r -k -u 0 line; do
     printf '\e[91m%s\e[0m' "$line";
     print -n $'\0';
 done &)
-

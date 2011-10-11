@@ -101,8 +101,8 @@ TRAPINT() {
   # Return the default exit code so Zsh aborts the current command.
   return $1
 }
-if [[ -f ~/.shell/aliases ]]; then
-  . ~/.shell/aliases
+if [[ -f ~/.shell_aliases ]]; then
+  . ~/.shell_aliases
 fi
 # Make sure aliases are expanded when using sudo.
 alias sudo='sudo '

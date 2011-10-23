@@ -6,9 +6,11 @@ install:
 	if test ! -d ~/htdocs/zsh/Completion ; then mkdir -p ~/htdocs && cd ~/htdocs && git clone git://zsh.git.sourceforge.net/gitroot/zsh/zsh; fi
 	if test ! -L ~/.zsh/functions/completion; then ln -s ~/htdocs/zsh/Completion ~/.zsh/functions/completion; fi
 	if test ! -L ~/.zsh/functions/vcs_info; then ln -s ~/htdocs/zsh/Functions/VCS_Info ~/.zsh/functions/vcs_info; fi
+	cd ~/ && curl https://raw.github.com/bobthecow/git-flow-completion/master/git-flow-completion.zsh -o .git-flow-completion.zsh
 
 clean:
 	if test -L ~/.zsh/functions/completion; then unlink ~/.zsh/functions/completion; fi
 	if test -L ~/.zsh/functions/vcs_info; then unlink ~/.zsh/functions/vcs_info; fi
 	if test -d ~/.zsh; then rm -rf ~/.zsh; fi
 	if test -f ~/bin/git-info.sh; then rm -rf ~/bin/git-info.sh; fi
+	if test -f ~/.git-flow-completion.zsh; then rm -rf ~/.git-flow-completion.zsh; fi

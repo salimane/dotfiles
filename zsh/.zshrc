@@ -169,6 +169,7 @@ if [[ -f ~/.git-flow-completion.zsh ]]; then
   . ~/.git-flow-completion.zsh
 fi
 
+export PATH="~/home/bin:$PATH"
 
 #######################
 #  GIT (branch, vcs)  #

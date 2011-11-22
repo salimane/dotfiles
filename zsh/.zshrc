@@ -89,7 +89,6 @@ export GREP_COLOR='1;31' # highlight matches in red
 [[ -x $(which colordiff) ]] && alias diff="colordiff -u" || alias diff="diff -u"
 [[ -x $(which colormake) ]] && alias make=colormake
 alias eject="drutil tray eject"
-alias git-info='. /home/$USER/git-info.sh'
 alias quote="sed -Ee $'s/([ \'\"])/\\\\\\\\\\\1/g'"
 EDITOR=`which-command nano`
 PAGER=`which-command less`
@@ -169,7 +168,7 @@ if [[ -f ~/.git-flow-completion.zsh ]]; then
   . ~/.git-flow-completion.zsh
 fi
 
-export PATH="~/home/bin:$PATH"
+export PATH="~/bin:$PATH"
 
 #######################
 #  GIT (branch, vcs)  #

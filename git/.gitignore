@@ -9,6 +9,8 @@ doc/
 *~
 .DS_Store
 
+#netbeans project files
+nbproject/*
 
 # Android built application files
 *.apk

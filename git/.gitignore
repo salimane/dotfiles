@@ -11,6 +11,12 @@ doc/
 
 #netbeans project files
 nbproject/*
+nbproject/
+
+#eclipse project files
+.project
+.pydevproject
+.settings/
 
 # Android built application files
 *.apk

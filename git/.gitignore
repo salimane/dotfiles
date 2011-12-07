@@ -17,6 +17,7 @@ nbproject/
 .project
 .pydevproject
 .settings/
+.buildpath
 
 # Android built application files
 *.apk

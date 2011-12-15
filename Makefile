@@ -2,6 +2,7 @@ install:
 	cp zsh/.zshrc ~/
 	cp git/.gitconfig git/.gitignore ~/
 	mkdir -p ~/bin && cp bin/* ~/bin/
+        chmod +x ~/bin/* 
 	mkdir -p ~/.zsh/cache && mkdir -p ~/.zsh/functions
 	if test ! -d ~/htdocs/zsh/Completion ; then mkdir -p ~/htdocs && cd ~/htdocs && git clone git://zsh.git.sourceforge.net/gitroot/zsh/zsh; fi
 	if test ! -L ~/.zsh/functions/completion; then ln -s ~/htdocs/zsh/Completion ~/.zsh/functions/completion; fi

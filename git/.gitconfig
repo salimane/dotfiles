@@ -58,3 +58,5 @@
 
 [github]
 	user = salimane
+[push]
+        default = upstream

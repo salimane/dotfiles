@@ -1,0 +1,47 @@
+# Salimane Adjao Moustapha's Ubuntu Precise Ocelot 11.10 Sources list
+#
+# Repository List based on standard precise with many extra packages
+#
+# If you get errors about missing keys, lookup the key in this file
+# and run these commands (replace KEY with the key number):
+#
+# sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com KEY
+
+
+# Ubuntu supported packages
+deb http://cn.archive.ubuntu.com/ubuntu/ precise main restricted multiverse universe
+deb http://cn.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse
+deb http://cn.archive.ubuntu.com/ubuntu/ precise-updates main restricted multiverse universe
+deb http://security.ubuntu.com/ubuntu precise-security main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu precise-proposed main restricted universe multiverse
+deb-src http://cn.archive.ubuntu.com/ubuntu/ precise main restricted multiverse universe
+deb-src http://cn.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://cn.archive.ubuntu.com/ubuntu/ precise-updates main restricted multiverse universe
+deb-src http://security.ubuntu.com/ubuntu precise-security main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu precise-proposed main restricted universe multiverse
+
+
+#Canonical 'partner' Repository
+deb http://archive.canonical.com/ubuntu precise partner
+deb http://archive.canonical.com/ubuntu precise-backports partner
+deb http://archive.canonical.com/ubuntu precise-updates partner
+deb http://archive.canonical.com/ubuntu precise-security partner
+deb http://archive.canonical.com/ubuntu precise-proposed partner
+deb-src http://archive.canonical.com/ubuntu precise partner
+deb-src http://archive.canonical.com/ubuntu precise-backports partner
+deb-src http://archive.canonical.com/ubuntu precise-updates partner
+deb-src http://archive.canonical.com/ubuntu precise-security partner
+deb-src http://archive.canonical.com/ubuntu precise-proposed partner
+
+#Third Parties Latest Software
+deb http://extras.ubuntu.com/ubuntu precise main
+deb-src http://extras.ubuntu.com/ubuntu precise main
+
+#medibuntu
+# sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2EBC26B60C5A2783
+deb http://packages.medibuntu.org/ precise free non-free
+deb-src http://packages.medibuntu.org/ precise free non-free
+
+#google
+# sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com A040830F7FAC5991
+deb http://dl.google.com/linux/deb/ stable non-free main

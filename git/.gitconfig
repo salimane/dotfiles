@@ -22,10 +22,15 @@
   changed = green
   untracked = cyan
 
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
 [core]
-  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 	editor = nano
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 
 [alias]
   st = status
@@ -55,8 +60,8 @@
 
 [merge]
 	tool = meld
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
 
 [github]
 	user = salimane
-[push]
-        default = upstream

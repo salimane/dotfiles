@@ -2,7 +2,8 @@ install:
 	if test ! -f /bin/zsh; then sudo apt-get install --force-yes -y zsh zsh-dev zshdb zsh-doc zsh-lovers; fi
 	if test ! -f /usr/bin/curl; then sudo apt-get install curl; fi
 	cp zsh/.zshrc ~/
-	cp git/.gitconfig git/.gitignore ~/
+	cp wget/.wgetrc ~/
+	cp git/.gitconfig git/.gitignore git/.gitattributes ~/
 	mkdir -p ~/bin && cp bin/* ~/bin/
 	chmod +x ~/bin/* 
 	mkdir -p ~/.zsh/cache && mkdir -p ~/.zsh/functions

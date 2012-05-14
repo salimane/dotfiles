@@ -3,6 +3,7 @@ install:
 	if test ! -f /usr/bin/curl; then sudo apt-get install curl; fi
 	cp zsh/.zshrc ~/
 	cp wget/.wgetrc ~/
+	cp nano/.nanorc ~/
 	cp git/.gitconfig git/.gitignore git/.gitattributes ~/
 	mkdir -p ~/bin && cp bin/* ~/bin/
 	chmod +x ~/bin/* 

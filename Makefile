@@ -1,9 +1,11 @@
 install:
 	if test ! -f /bin/zsh; then sudo apt-get install --force-yes -y zsh zsh-dev zshdb zsh-doc zsh-lovers; fi
 	if test ! -f /usr/bin/curl; then sudo apt-get install curl; fi
+	if test ! -f /usr/bin/valgrind; then sudo apt-get install valgrind; fi
 	cp zsh/.zshrc ~/
 	cp wget/.wgetrc ~/
 	cp nano/.nanorc ~/
+	cp valgrind/.valgrindrc ~/
 	cp git/.gitconfig git/.gitignore git/.gitattributes ~/
 	mkdir -p ~/bin && cp bin/* ~/bin/
 	chmod +x ~/bin/* 

@@ -83,7 +83,7 @@ alias grep=egrep
 alias fgrep='fgrep --color=auto'
 alias grpe=grep
 alias pgrep="\grep -P" # PCRE-compatible
-alias nano="nano -cimtuE -T 2"
+alias nano="nano -c"
 #alias make="CFLAGS='-Wall' make"
 setopt complete_aliases
 export GREP_OPTIONS="--color=auto" # removes color when piping

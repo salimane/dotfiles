@@ -1,5 +1,4 @@
 --tool=memcheck
---gen-suppressions=yes
 --leak-check=full
 --leak-resolution=high
 --show-reachable=yes

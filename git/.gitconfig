@@ -2,6 +2,12 @@
 	name = Salimane Adjao Moustapha
 	email = me@salimane.com
 
+[help]
+  autocorrect = 1
+
+[rerere]
+  enabled = 1
+
 [color]
   ui = auto
 
@@ -33,15 +39,17 @@
 	attributesfile = ~/.gitattributes
 
 [alias]
-  st = status
+  st = "status -sb"
   ci = commit
   br = branch
   co = checkout
-  df = diff
+  df = diff --word-diff
   lg = log -p
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
+  amend = commit --amend -C HEAD
+  credit = commit --amend --author "$1 <$2>" -C HEAD
 
 [apply]
   whitespace = strip

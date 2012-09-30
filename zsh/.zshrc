@@ -31,6 +31,28 @@ _quote-previous-word-in-double() {
   modify-current-argument '${(qqq)${(Q)ARG}}'
   zle vi-forward-blank-word
 }
+# make search up and down work, so partially type and hit up/down to find relevant stuff
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[OH" beginning-of-line
+bindkey "^[[F"  end-of-line
+bindkey "^[[4~" end-of-line
+bindkey "^[OF" end-of-line
+bindkey ' ' magic-space    # also do history expansion on space
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+bindkey '^[[Z' reverse-menu-complete
+
+# Make the delete key (or Fn + Delete on the Mac) work instead of outputting a ~
+bindkey '^?' backward-delete-char
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+bindkey "\e[3~" delete-char
 
 
 ############
@@ -142,10 +164,15 @@ setopt appendhistory
 setopt hist_ignore_all_dups hist_save_nodups share_history hist_ignore_space hist_reduce_blanks
 function history-all { history -E 1 }
 unsetopt correctall
+setopt auto_menu   
+unsetopt menu_complete
 setopt prompt_subst auto_resume nobeep noclobber auto_cd auto_pushd pushd_ignore_dups correct list_packed noautoremoveslash nolistbeep extended_glob interactive_comments
 autoload zed zcalc tetris ignoreeof autopushd pushdignoredups pushdminus
 # Be paranoid, new files are readable/writable by me only.
 #umask 077
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 
 
 #####################
@@ -170,8 +197,10 @@ if [[ -f ~/.git-flow-completion.zsh ]]; then
   . ~/.git-flow-completion.zsh
 fi
 
+source /etc/zsh_command_not_found
+
 export PATH="~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools:$PATH"
-export PATH="~/bin:$PATH"
+export PATH="~/bin:~/.cabal/bin:$PATH"
 
 #######################
 #  GIT (branch, vcs)  #

@@ -201,6 +201,12 @@ source /etc/zsh_command_not_found
 
 export PATH="~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools:$PATH"
 export PATH="~/bin:~/.cabal/bin:$PATH"
+export GOROOT=$HOME/htdocs/go
+export GOARCH=amd64
+export GOOS=linux
+export GOPATH=$HOME/htdocs/mygo
+export PATH=$PATH:$GOROOT/bin:$HOME/htdocs/mygo/bin
+
 
 #######################
 #  GIT (branch, vcs)  #

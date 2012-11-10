@@ -98,6 +98,7 @@ alias addkey="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys"
 alias info='info --vi-keys'
 alias less='less --tab=4 --no-init --LONG-PROMPT --ignore-case --squeeze-blank-line -R'
 alias get="curl -O"
+alias wgethtml='wget -E -H -k -K -p -nd -o logwget.txt'
 alias sed="sed -E"
 alias noascii="sed 's/.\\[[0-9][0-9]?m//g'"
 alias egrep='egrep --color=auto'
@@ -163,10 +164,10 @@ SAVEHIST=50000
 setopt appendhistory
 setopt hist_ignore_all_dups hist_save_nodups share_history hist_ignore_space hist_reduce_blanks
 function history-all { history -E 1 }
-unsetopt correctall
+#unsetopt correctall
 setopt auto_menu   
 unsetopt menu_complete
-setopt prompt_subst auto_resume nobeep noclobber auto_cd auto_pushd pushd_ignore_dups correct list_packed noautoremoveslash nolistbeep extended_glob interactive_comments
+setopt prompt_subst auto_resume nobeep noclobber auto_cd auto_pushd pushd_ignore_dups list_packed noautoremoveslash nolistbeep extended_glob interactive_comments
 autoload zed zcalc tetris ignoreeof autopushd pushdignoredups pushdminus
 # Be paranoid, new files are readable/writable by me only.
 #umask 077
@@ -206,7 +207,6 @@ export GOARCH=amd64
 export GOOS=linux
 export GOPATH=$HOME/htdocs/mygo
 export PATH=$PATH:$GOROOT/bin:$HOME/htdocs/mygo/bin
-
 
 #######################
 #  GIT (branch, vcs)  #
@@ -409,7 +409,7 @@ zstyle ':completion:*' list-suffixes yes
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:default' list-prompt '%p'
 zstyle ':completion:*' format '    %B%d%b:'
-zstyle ':completion:*:corrections' format '    %B%d%b (errors: %e)'
+#zstyle ':completion:*:corrections' format '    %B%d%b (errors: %e)'
 zstyle ':completion:*:warnings' format '    %Bno matches for %d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' separate-sections yes
@@ -428,3 +428,6 @@ exec 2>>(while read -r -k -u 0 line; do
     printf '\e[91m%s\e[0m' "$line";
     print -n $'\0';
 done &)
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

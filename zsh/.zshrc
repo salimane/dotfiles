@@ -116,6 +116,7 @@ export GREP_COLOR='1;31' # highlight matches in red
 alias eject="drutil tray eject"
 alias quote="sed -Ee $'s/([ \'\"])/\\\\\\\\\\\1/g'"
 alias phpcs-fixer="phpcs-fixer --level=all --fixers=indentation,linefeed,trailing_spaces,php_closing_tag,short_tag,return,visibility,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif"
+alias phpunit="phpunit --coverage-text"
 EDITOR=`which-command nano`
 PAGER=`which-command less`
 LESS=`which-command less`

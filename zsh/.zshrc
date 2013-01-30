@@ -120,6 +120,10 @@ alias phpunit="phpunit --coverage-text"
 EDITOR=`which-command nano`
 PAGER=`which-command less`
 LESS=`which-command less`
+# alias git to hub
+if [[ -f ~/bin/hub ]]; then
+	eval "$(hub alias -s)"
+fi
 
 TRAPINT() {
   # Store the current buffer in the history.
@@ -136,7 +140,7 @@ alias sudo='sudo '
 gitk() {
   command gitk \
       --max-count=200 \
-      $(git rev-parse --symbolic-full-name --remotes --branches) \
+      $(command git rev-parse --symbolic-full-name --remotes --branches) \
       $@ &
   disown %command
 }
@@ -199,6 +203,9 @@ autoload -Uz zmv
 if [[ -f ~/.git-flow-completion.zsh ]]; then
   . ~/.git-flow-completion.zsh
 fi
+if [[ -f ~/.hub.zsh_completion ]]; then
+  . ~/.hub.zsh_completion
+fi
 
 source /etc/zsh_command_not_found
 
@@ -221,7 +228,7 @@ if [[ -d ~/.zsh/functions/vcs_info ]]; then
         $fpath)
 fi
 parse_git_status() {
-  local st="$(git status 2>/dev/null)"
+  local st="$(command git status 2>/dev/null)"
   if [[ -n "$st" ]]; then
     local -a arr
     arr=(${(f)st})
@@ -254,7 +261,7 @@ prompt_chpwd() {
 add-zsh-hook chpwd prompt_chpwd
 RUN_VCS_INFO=1
 function prompt_char {
-  git branch >/dev/null 2>/dev/null && echo '±' && return
+  command git branch >/dev/null 2>/dev/null && echo '±' && return
   hg root >/dev/null 2>/dev/null && echo '☿' && return
   svn info >/dev/null 2>/dev/null && echo '⚡' && return
   echo '⚛'
@@ -262,7 +269,7 @@ function prompt_char {
 function virtualenv_info {
   [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
-parse_git_dirty(){ [[ -n $(git status -s 2> /dev/null) ]] && echo "✗"; }
+parse_git_dirty(){ [[ -n $(command git status -s 2> /dev/null) ]] && echo "✗"; }
 
 ###################
 # SSH-AGENT       #
@@ -318,7 +325,7 @@ fi
 # PROMPT SETTINGS #
 ###################
 prompt_precmd() {
-  if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+  if [[ -z $(command git ls-files --other --exclude-standard 2> /dev/null) ]] {
     zstyle ':vcs_info:*' formats "[$green%b$default%u%c$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
   } else {
     zstyle ':vcs_info:*' formats "[$green%b$default%u%c$red✗$(parse_git_status):$yellow%.7i$default:$blue%s$default]"

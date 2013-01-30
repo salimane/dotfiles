@@ -14,6 +14,8 @@ install:
 	if test ! -L ~/.zsh/functions/completion; then ln -s ~/htdocs/zsh/Completion ~/.zsh/functions/completion; fi
 	if test ! -L ~/.zsh/functions/vcs_info; then ln -s ~/htdocs/zsh/Functions/VCS_Info ~/.zsh/functions/vcs_info; fi
 	if test ! -f ~/.git-flow-completion.zsh; then cd ~/ && curl https://raw.github.com/bobthecow/git-flow-completion/master/git-flow-completion.zsh -o .git-flow-completion.zsh; fi
+	if test ! -f ~/.hub.zsh_completion; then cd ~/ && curl https://raw.github.com/defunkt/hub/master/etc/hub.zsh_completion -o .hub.zsh_completion; fi
+	curl http://defunkt.io/hub/standalone -sLo ~/bin/hub && chmod +x ~/bin/hub
 	sudo chsh -s /bin/zsh
 	zsh
 

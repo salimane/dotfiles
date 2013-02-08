@@ -90,10 +90,10 @@ alias 'cd..=cd ..'
 alias tree="tree -A -I 'CVS|*~'"
 alias acs="sudo apt-cache search"
 alias acsh="sudo apt-cache show"
-alias agd="sudo apt-get dist-upgrade -m -y"
-alias agi="sudo apt-get install -m -y"
+alias agd="sudo apt-get dist-upgrade -m -y --force-yes "
+alias agi="sudo apt-get install -m -y --force-yes "
 alias agu="sudo apt-get update"
-alias agud="sudo apt-get update && sudo apt-get dist-upgrade -m -y"
+alias agud="sudo apt-get update && sudo apt-get dist-upgrade -m -y --force-yes "
 alias addkey="sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys"
 alias info='info --vi-keys'
 alias less='less --tab=4 --no-init --LONG-PROMPT --ignore-case --squeeze-blank-line -R'

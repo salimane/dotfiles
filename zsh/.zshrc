@@ -167,6 +167,8 @@ PROMPT_COMMAND='history -a'
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
+HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
+setopt HIST_VERIFY
 setopt appendhistory
 setopt hist_ignore_all_dups hist_save_nodups share_history hist_ignore_space hist_reduce_blanks
 function history-all { history -E 1 }
@@ -321,6 +323,30 @@ else
   fi
 fi
 
+
+###################
+# LESS		  #
+###################
+# Set less options
+if [[ -x $(which less) ]]
+then
+    export PAGER="less"
+    export LESS="--ignore-case --LONG-PROMPT --QUIET --chop-long-lines -Sm --RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
+    export LESSHISTFILE='-'
+    if [[ -x $(which lesspipe.sh) ]]
+    then
+		LESSOPEN="| lesspipe.sh %s"
+		export LESSOPEN
+    fi
+fi
+
+###################
+# LOCALE 		  #
+###################
+export TZ=Asia/Shanghai
+export LC_CTYPE=zh_CN.UTF-8
+export LANG="en_US.UTF-8"
+
 ###################
 # PROMPT SETTINGS #
 ###################
@@ -335,9 +361,15 @@ prompt_precmd() {
   else
     vcs_info_msg_0_=
   fi
+  
+  ssh_msg=
+  if [[ -n "$SSH_CONNECTION" ]]; then
+     ssh_from=(${=SSH_CONNECTION})
+	 ssh_msg="(← $ssh_from[1])"
+  fi
 
   PROMPT="
-$blue%n%{$reset_color%} at $yellow%m%{$reset_color%} in $cyan${PWD/#$HOME/~}%{$reset_color%}
+$blue%n%{$reset_color%} at $yellow%m%{$reset_color%} ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
 $(virtualenv_info)$(prompt_char) $gray"
 
   #### right prompt

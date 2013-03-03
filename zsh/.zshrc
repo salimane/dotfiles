@@ -219,6 +219,10 @@ export GOOS=linux
 export GOPATH=$HOME/htdocs/mygo
 export PATH=$PATH:$GOROOT/bin:$HOME/htdocs/mygo/bin
 
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 #######################
 #  GIT (branch, vcs)  #
 #######################

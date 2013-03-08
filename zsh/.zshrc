@@ -106,7 +106,12 @@ alias grep=egrep
 alias fgrep='fgrep --color=auto'
 alias grpe=grep
 alias pgrep="\grep -P" # PCRE-compatible
-alias nano="nano -c"
+alias subl="/home/salimane/Sublime\ Text\ 2/sublime_text"
+alias gedit="subl"
+alias nano="subl"
+export EDITOR="subl"
+#EDITOR=`which-command nano`
+#alias nano="nano -c"
 #alias make="CFLAGS='-Wall' make"
 setopt complete_aliases
 export GREP_OPTIONS="--color=auto" # removes color when piping
@@ -117,7 +122,7 @@ alias eject="drutil tray eject"
 alias quote="sed -Ee $'s/([ \'\"])/\\\\\\\\\\\1/g'"
 alias phpcs-fixer="phpcs-fixer --level=all --fixers=indentation,linefeed,trailing_spaces,php_closing_tag,short_tag,return,visibility,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif"
 alias phpunit="phpunit --coverage-text"
-EDITOR=`which-command nano`
+
 PAGER=`which-command less`
 LESS=`which-command less`
 # alias git to hub
@@ -220,6 +225,7 @@ export GOPATH=$HOME/htdocs/mygo
 export PATH=$PATH:$GOROOT/bin:$HOME/htdocs/mygo/bin
 
 #rbenv
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 

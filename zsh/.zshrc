@@ -106,8 +106,7 @@ alias grep=egrep
 alias fgrep='fgrep --color=auto'
 alias grpe=grep
 alias pgrep="\grep -P" # PCRE-compatible
-alias subl="/home/salimane/Sublime\ Text\ 2/sublime_text"
-alias gedit="subl"
+#alias gedit="subl"
 alias nano="subl"
 export EDITOR="subl"
 #EDITOR=`which-command nano`

@@ -1,4 +1,4 @@
-set autoindent
+#set autoindent
 unset casesensitive
 set historylog
 unset  mouse
@@ -8,3 +8,4 @@ set tabsize "2"
 set tabstospaces
 set tempfile
 set const
+set nowrap

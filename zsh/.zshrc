@@ -106,11 +106,8 @@ alias grep=egrep
 alias fgrep='fgrep --color=auto'
 alias grpe=grep
 alias pgrep="\grep -P" # PCRE-compatible
-#alias gedit="subl"
-alias nano="subl"
-export EDITOR="subl"
-#EDITOR=`which-command nano`
-#alias nano="nano -c"
+EDITOR=`which-command nano`
+alias nano="nano -c"
 #alias make="CFLAGS='-Wall' make"
 setopt complete_aliases
 export GREP_OPTIONS="--color=auto" # removes color when piping
@@ -125,9 +122,9 @@ alias phpunit="phpunit --coverage-text"
 PAGER=`which-command less`
 LESS=`which-command less`
 # alias git to hub
-if [[ -f ~/bin/hub ]]; then
-	eval "$(hub alias -s)"
-fi
+#if [[ -f ~/bin/hub ]]; then
+#	eval "$(hub alias -s)"
+#fi
 
 TRAPINT() {
   # Store the current buffer in the history.
@@ -209,9 +206,9 @@ autoload -Uz zmv
 if [[ -f ~/.git-flow-completion.zsh ]]; then
   . ~/.git-flow-completion.zsh
 fi
-if [[ -f ~/.hub.zsh_completion ]]; then
-  . ~/.hub.zsh_completion
-fi
+#if [[ -f ~/.hub.zsh_completion ]]; then
+#  . ~/.hub.zsh_completion
+#fi
 
 source /etc/zsh_command_not_found
 

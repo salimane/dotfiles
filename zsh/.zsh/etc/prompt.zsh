@@ -17,9 +17,14 @@ function parse_git_dirty {
     [[ -n $(command git status -s 2> /dev/null) ]] && echo "✗";
 }
 
+# Must run vcs_info when changing directories.
+function prompt_chpwd {
+  FORCE_RUN_VCS_INFO=1
+}
+
 function prompt_precmd {
 
-  if [[ -n $RUN_VCS_INFO ]]; then
+  if [[ -n $FORCE_RUN_VCS_INFO ]]; then
     vcs_info
   else
     vcs_info_msg_0_=
@@ -48,4 +53,5 @@ $(virtualenv_info)$(prompt_char) $gray"
   export MYSQL_PS1="mysql \u@\h [\d]\n>"
 }
 
+add-zsh-hook chpwd prompt_chpwd
 add-zsh-hook precmd prompt_precmd

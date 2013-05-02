@@ -20,7 +20,7 @@ cons25)
 esac
 case "${TERM}" in
 screen*|kterm*|xterm*)
-    precmd() {
+    function precmd {
         echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
     }
   export LSCOLORS=exfxcxdxbxegedabagacad

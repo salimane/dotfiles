@@ -33,14 +33,3 @@ if [[ -z $(command git ls-files --other --exclude-standard 2> /dev/null) ]] {
 } else {
     zstyle ':vcs_info:*' formats "[$green%b$default%u%c$red✗$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
 }
-
-FORCE_RUN_VCS_INFO=1
-# Must run vcs_info when changing directories.
-function prompt_chpwd {
-  FORCE_RUN_VCS_INFO=1
-}
-
-add-zsh-hook chpwd prompt_chpwd
-RUN_VCS_INFO=1
-
-

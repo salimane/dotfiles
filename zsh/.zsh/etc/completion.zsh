@@ -9,11 +9,11 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' format '%BCompleting %d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:processes' menu yes select=2
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=0
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
 bindkey '^I' complete-word
-setopt nolistambiguous completeinword
+#setopt nolistambiguous completeinword
 zstyle ':completion:::::' completer _expand _complete _prefix _ignored _approximate
 zstyle ':completion:*:(^approximate):*' matcher-list 'm:{a-z}={A-Z}'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
@@ -36,3 +36,5 @@ zstyle ':completion:*:*:-command-:*' ignored-patterns './config.*'
 zle -C complete-files complete-word _generic
 zstyle ':completion:complete-files:*' completer _files
 bindkey '^F' complete-files
+zstyle ':completion:*' menu select=0
+setopt list_ambiguous

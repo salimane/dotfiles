@@ -24,6 +24,12 @@ function prompt_chpwd {
 
 function prompt_precmd {
 
+  if [[ -z $(command git ls-files --other --exclude-standard 2> /dev/null) ]] {
+      zstyle ':vcs_info:*' formats "[$green%b$default%u%c$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
+  } else {
+      zstyle ':vcs_info:*' formats "[$green%b$default%u%c$red✗$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
+  }
+
   if [[ -n $FORCE_RUN_VCS_INFO ]]; then
     vcs_info
   else

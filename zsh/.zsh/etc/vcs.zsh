@@ -27,9 +27,3 @@ zstyle ':vcs_info:*' stagedstr "$green●$default" # %c
 zstyle ':vcs_info:*' actionformats "[$green%b%c$default/$red%a$default:$blue%s$default]"
 zstyle ':vcs_info:*' branchformat '%b'
 zstyle ':vcs_info:(hg*|git*):*' actionformats "[$green%b%c$default/$red%a$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
-
-if [[ -z $(command git ls-files --other --exclude-standard 2> /dev/null) ]] {
-    zstyle ':vcs_info:*' formats "[$green%b$default%u%c$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
-} else {
-    zstyle ':vcs_info:*' formats "[$green%b$default%u%c$red✗$(parse_git_status):$yellow%.7i$default:$blue%s$default]"
-}

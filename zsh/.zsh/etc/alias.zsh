@@ -52,10 +52,8 @@ PAGER=`which-command less`
 LESS=`which-command less`
 EDITOR=`which-command nano`
 # alias git to hub
-
 if [[ -f ~/bin/hub ]]; then
-  alias git=hub
-#   eval "$(hub alias -s)"
+  eval "$(hub alias -s)"
 fi
 
 function TRAPINT {

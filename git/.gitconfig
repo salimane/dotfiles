@@ -3,68 +3,61 @@
 	email = me@salimane.com
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [rerere]
-  enabled = 1
+	enabled = 1
 
 [color]
-  ui = auto
+	ui = auto
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [core]
-  whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
+	whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 	editor = nano
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
 [alias]
-  st = "status -sb"
-  ci = commit
-  br = branch
-  co = checkout
-  df = diff --word-diff
-  lg = log -p
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ls = ls-files
-  amend = commit --amend -C HEAD
-  credit = commit --amend --author "$1 <$2>" -C HEAD
-
-[apply]
-  whitespace = strip
+	st = "status -sb"
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff --word-diff
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	amend = commit --amend -C HEAD
+	credit = commit --amend --author "$1 <$2>" -C HEAD
 
 [diff]
-  rename = copy
+	rename = copy
 
 [branch]
 	autosetupmerge = true
 
 [branch "master"]
-  rebase = true
+	rebase = true
 
 [format]
-  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+	pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
 [merge]
 	tool = meld
@@ -72,7 +65,11 @@
 	log = true
 
 [push]
-  default = simple
+	default = simple
 
 [github]
 	user = salimane
+
+[hub]
+	protocol = https
+	#host = my.example.org

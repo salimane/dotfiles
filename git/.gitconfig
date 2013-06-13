@@ -33,6 +33,7 @@
 	editor = nano
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+  	autocrlf = input
 
 [alias]
 	st = "status -sb"

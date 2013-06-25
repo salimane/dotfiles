@@ -87,23 +87,27 @@ pip-log.txt
 .tox
 
 #rails
+/.bundle
+/db/*.sqlite3*
+/log/*.log*
+/tmp/
+/.sass-cache/
+/public/uploads/
+/public/system/*
+/spec/tmp/*
+/.idea
+/.DS_Store
+/vendor/bundle/*
+/capybara-*.html
 *.rbc
 *.sassc
-.sass-cache
 capybara-*.html
-.rspec
-/.bundle
-/vendor/bundle
-/log/*
-/tmp/*
-/db/*.sqlite3
-/public/system/*
 /coverage/
-/spec/tmp/*
 **.orig
 config/*.yml
 rerun.txt
 pickle-email-*.html
+
 
 #ruby
 coverage

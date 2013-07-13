@@ -65,8 +65,8 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
-[push]
-	default = simple
+# [push]
+# 	default = simple
 
 [github]
 	user = salimane

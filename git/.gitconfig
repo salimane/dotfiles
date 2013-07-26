@@ -48,9 +48,6 @@
 	amend = commit --amend -C HEAD
 	credit = commit --amend --author "$1 <$2>" -C HEAD
 
-[diff]
-	rename = copy
-
 [branch]
 	autosetupmerge = true
 
@@ -60,13 +57,8 @@
 [format]
 	pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
-[merge]
-	tool = meld
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-
-# [push]
-# 	default = simple
+[push]
+ 	default = simple
 
 [github]
 	user = salimane
@@ -81,3 +73,21 @@
 [core]
   excludesfile = /opt/boxen/config/git/gitignore
 
+[merge]
+	tool = diffmerge
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[diff]
+	rename = copy
+	tool = diffmerge
+
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+
+[mergetool]
+	keepBackup = false

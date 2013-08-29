@@ -1,5 +1,5 @@
 SSHPID=`ps ax|grep -c "[s]sh-agent"`
-if (( $SSHPID == 0 ))
+if test ! -f ~/.ssh-env && (( $SSHPID == 0 ))
 then
     ssh-agent > ~/.ssh-env
     source ~/.ssh-env

@@ -5,5 +5,7 @@ then
     source ~/.ssh-env
     ssh-add
 else
-    source ~/.ssh-env
+    if [[ -f "$HOME/.ssh-env" ]]; then
+        source ~/.ssh-env
+    fi
 fi

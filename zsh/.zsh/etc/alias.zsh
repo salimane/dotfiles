@@ -44,8 +44,8 @@ alias sudo='sudo '
 setopt complete_aliases
 export GREP_OPTIONS="--color=auto" # removes color when piping
 export GREP_COLOR='1;31' # highlight matches in red
-[[ -x $(which colordiff) ]] && alias diff="colordiff -u" || alias diff="diff -u"
-[[ -x $(which colormake) ]] && alias make=colormake
+type colordiff >/dev/null 2>&1 && alias diff="colordiff -u" || alias diff="diff -u"
+type colormake >/dev/null 2>&1 && alias make=colormake
 
 
 PAGER=`which-command less`

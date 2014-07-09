@@ -47,6 +47,7 @@
 	ls = ls-files
 	amend = commit --amend -C HEAD
 	credit = commit --amend --author "$1 <$2>" -C HEAD
+	g = grep --break --heading --line-number
 
 [branch]
 	autosetupmerge = true
@@ -91,3 +92,6 @@
 
 [mergetool]
 	keepBackup = false
+[grep]
+	extendRegexp = true
+	lineNumber = true

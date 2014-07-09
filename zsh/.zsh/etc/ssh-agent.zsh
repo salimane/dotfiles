@@ -1,6 +1,7 @@
 SSHPID=`ps ax|grep -c "[s]sh-agent"`
-if test ! -f ~/.ssh-env && (( $SSHPID == 0 ))
+if (( $SSHPID == 0 ))
 then
+    rm -rf ~/.ssh-env
     ssh-agent > ~/.ssh-env
     source ~/.ssh-env
     ssh-add

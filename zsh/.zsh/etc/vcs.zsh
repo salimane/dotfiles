@@ -8,10 +8,12 @@ function parse_git_status {
     local -a arr
     arr=(${(f)st})
     if [[ $arr[2] =~ 'Your branch is' ]]; then
-      if [[ $arr[2] =~ 'ahead' ]]; then
+      if [[ $arr[2] =~ 'Your branch is ahead' ]]; then
         echo "$green↑"
-      elif [[ $arr[2] =~ 'diverged' ]]; then
+      elif [[ $arr[2] =~ 'Your branch is diverged' ]]; then
         echo "$red↕"
+      elif [[ $arr[2] =~ 'Your branch is up-to-date' ]]; then
+        echo ""
       else
         echo "$yellow↓"
       fi

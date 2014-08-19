@@ -78,6 +78,7 @@
 	tool = diffmerge
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	ff = false
 
 [diff]
 	rename = copy

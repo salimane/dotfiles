@@ -18,7 +18,7 @@ function parse_git_dirty {
 }
 
 function git_user_email {
-  echo `command git config user.email` | awk -F\@ '{print " git:("$2")"}';
+  echo `command git config user.email` | awk -F\@ '{print " (git:"$2")"}';
 }
 
 # Must run vcs_info when changing directories.

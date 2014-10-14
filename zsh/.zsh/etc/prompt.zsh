@@ -17,6 +17,10 @@ function parse_git_dirty {
     [[ -n $(command git status -s 2> /dev/null) ]] && echo "✗";
 }
 
+function git_user_email {
+  echo `command git config user.email` | awk -F\@ '{print " git:("$2")"}';
+}
+
 # Must run vcs_info when changing directories.
 function prompt_chpwd {
   FORCE_RUN_VCS_INFO=1
@@ -43,7 +47,7 @@ function prompt_precmd {
   fi
 
   PROMPT="
-$blue%n%{$reset_color%} at $yellow%m%{$reset_color%} ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
+$blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
 $(virtualenv_info)$(prompt_char) $gray"
 
   #### right prompt

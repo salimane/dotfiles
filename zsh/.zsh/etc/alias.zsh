@@ -38,6 +38,9 @@ alias eject="drutil tray eject"
 alias quote="sed -Ee $'s/([ \'\"])/\\\\\\\\\\\1/g'"
 alias phpcs-fixer="phpcs-fixer --level=all --fixers=indentation,linefeed,trailing_spaces,php_closing_tag,short_tag,return,visibility,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif"
 alias phpunit="phpunit --coverage-text"
+alias update-submodules="git submodule sync; git submodule update --init"
+# force 256 color support in tmux
+alias tmux="tmux -2"
 # Make sure aliases are expanded when using sudo.
 alias sudo='sudo '
 #alias make="CFLAGS='-Wall' make"
@@ -91,4 +94,8 @@ function gitk {
 function xpdf {
     command xpdf "$@" &
     disown %command
+}
+
+function google {
+  open "https://www.google.com/#q=$1"
 }

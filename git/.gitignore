@@ -1,73 +1,33 @@
-
-.bundle
-db/*.sqlite3*
-log/*.log
-*.log
-/tmp/
-doc/
-*.swp
-*~
-.DS_Store
-
+# Editor files #
+################
 #netbeans project files
 nbproject/*
 nbproject/
-
 #eclipse project files
 .project
 .pydevproject
 .settings/
 .buildpath
 
+# Compiled source #
+###################
 # Android built application files
 *.apk
 *.ap_
-
 # files for the dex VM
 *.dex
-
 # Java class files
 *.class
-
 # generated GUI files
 *R.java
-
-
-#Django
-*.log
-*.pot
-local_settings.py
-
-#drupal
-sites/default/files
-sites/default/private
-sites/default/settings.php
-cache/
-files/
-/README.txt
-/CHANGELOG.txt
-/COPYRIGHT.txt
-/INSTALL*.txt
-/LICENSE.txt
-/MAINTAINERS.txt
-/UPGRADE.txt
-robots.txt
-sites/all/README.txt
-sites/all/modules/README.txt
-sites/all/themes/README.txt
-.htaccess
-
 #Erlang
 .eunit
 deps
 priv
 *.o
 *.beam
-
-
 #python
 *.py[co]
-
 # Packages
 *.egg
 *.egg-info
@@ -79,13 +39,34 @@ parts
 develop-eggs
 .installed.cfg
 
+
+# Logs and databases #
+######################
+db/*.sqlite3*
+log/*.log
+*.log
 # Installer logs
 pip-log.txt
 
-# Unit test / coverage reports
-.coverage
-.tox
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
 
+
+
+
+# Frameworks #
+######################
+#Django
+*.pot
+local_settings.py
 #rails
 /.bundle
 /db/*.sqlite3*
@@ -107,8 +88,9 @@ capybara-*.html
 config/*.yml
 rerun.txt
 pickle-email-*.html
-
-
+# Unit test / coverage reports
+.coverage
+.tox
 #ruby
 coverage
 rdoc
@@ -124,9 +106,11 @@ spec/reports
 .config
 InstalledFiles
 .bundle
-
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
-
+.bundle
+/tmp/
+*.swp
+*~

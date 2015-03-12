@@ -3,7 +3,7 @@
 ##############
 
 # export GOROOT="/usr/lib/go"
-export GOPATH="$HOME"
+export GOPATH="$HOME/src/go"
 export PATH=$PATH:$GOPATH/bin
 # if test -f /opt/boxen/goenv/bin/goenv
 # then

@@ -109,7 +109,6 @@ InstalledFiles
 # YARD artifacts
 .yardoc
 _yardoc
-doc/
 .bundle
 /tmp/
 *.swp

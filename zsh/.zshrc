@@ -1,4 +1,4 @@
-# Zsh configuration file for Salimane Adjao Moustapha
+# Zsh configuration file
 
 # Skip all this for non-interactive shells
 [[ -z "$PS1" ]] && return

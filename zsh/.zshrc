@@ -34,6 +34,7 @@ source ~/.zsh/etc/terminal.zsh
 source ~/.zsh/etc/completion.zsh
 source ~/.zsh/etc/heroku.zsh
 source ~/.zsh/etc/aws_zsh_completer.zsh
+source ~/.zsh/etc/java.zsh
 source ~/.zsh/etc/boxen.zsh
 # }}}
 

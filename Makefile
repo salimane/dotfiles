@@ -1,5 +1,6 @@
 install:
 	ln -fs `pwd`/zsh/.zshrc ~/.zshrc
+	[[ -L ~/.zsh/etc ]] && unlink ~/.zsh/etc
 	mkdir -p ~/.zsh && ln -fs `pwd`/zsh/.zsh/etc ~/.zsh/etc
 	ln -fs `pwd`/wget/.wgetrc ~/.wgetrc
 	ln -fs `pwd`/nano/.nanorc ~/.nanorc

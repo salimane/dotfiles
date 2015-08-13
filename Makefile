@@ -4,6 +4,7 @@ install:
 	mkdir -p ~/.zsh && ln -fs `pwd`/zsh/.zsh/etc ~/.zsh/etc
 	ln -fs `pwd`/wget/.wgetrc ~/.wgetrc
 	ln -fs `pwd`/nano/.nanorc ~/.nanorc
+	mkdir -p ~/.gradle && ln -fs `pwd`/gradle/gradle.properties ~/.gradle/gradle.properties
 	ln -fs `pwd`/valgrind/.valgrindrc ~/.valgrindrc
 	ln -fs `pwd`/git/.gitconfig ~/.gitconfig
 	ln -fs `pwd`/git/.gitignore ~/.gitignore
@@ -16,4 +17,5 @@ install:
 
 clean:
 	if test -d ~/.zsh; then rm -rf ~/.zsh; fi
+	if test -d ~/.gradle; then rm -rf ~/.gradle; fi
 	if test -f ~/bin/git-info.sh; then rm -rf ~/bin/git-info.sh; fi

@@ -4,6 +4,7 @@ install:
 	mkdir -p ~/.zsh && ln -fs `pwd`/zsh/.zsh/etc ~/.zsh/etc
 	ln -fs `pwd`/wget/.wgetrc ~/.wgetrc
 	ln -fs `pwd`/nano/.nanorc ~/.nanorc
+	ln -fs `pwd`/postgresql/.psqlrc ~/.psqlrc
 	mkdir -p ~/.gradle && ln -fs `pwd`/gradle/gradle.properties ~/.gradle/gradle.properties
 	ln -fs `pwd`/valgrind/.valgrindrc ~/.valgrindrc
 	ln -fs `pwd`/git/.gitconfig ~/.gitconfig

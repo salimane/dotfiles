@@ -17,6 +17,7 @@ zsh-mime-setup
 
 
 # load zsh configurations {{{
+source ~/.zsh/etc/env.zsh
 source ~/.zsh/etc/keybinding.zsh
 source ~/.zsh/etc/colors.zsh
 source ~/.zsh/etc/alias.zsh
@@ -37,6 +38,7 @@ source ~/.zsh/etc/aws_zsh_completer.zsh
 source ~/.zsh/etc/java.zsh
 source ~/.zsh/etc/docker.zsh
 source ~/.zsh/etc/boxen.zsh
+[[ -r /usr/local/share/zsh/site-functions/_aws ]] && source /usr/local/share/zsh/site-functions/_aws
 # }}}
 
 

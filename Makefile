@@ -1,5 +1,7 @@
 install:
 	ln -fs `pwd`/zsh/.zshrc ~/.zshrc
+	mkdir -p ~/.gnupg && ln -fs `pwd`/gnupg/gpg.conf ~/.gnupg/gpg.conf
+	mkdir -p ~/.gnupg && ln -fs `pwd`/gnupg/sks-keyservers.netCA.pem ~/.gnupg/sks-keyservers.netCA.pem
 	if [[ -L ~/.zsh/etc ]]; then unlink ~/.zsh/etc; fi
 	mkdir -p ~/.zsh && ln -fs `pwd`/zsh/.zsh/etc ~/.zsh/etc
 	ln -fs `pwd`/wget/.wgetrc ~/.wgetrc

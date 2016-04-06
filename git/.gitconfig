@@ -37,7 +37,7 @@
 
 [alias]
 	st = "status -sb"
-	ci = commit
+	ci = commit -s
 	br = branch
 	co = checkout
 	df = diff --word-diff

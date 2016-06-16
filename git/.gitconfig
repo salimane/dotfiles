@@ -82,6 +82,7 @@
 [diff]
 	rename = copy
 	tool = diffmerge
+	compactionHeuristic = true
 
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
@@ -101,3 +102,11 @@
 	required = true
 [commit]
 	gpgsign = true
+[submodule]
+	fetchJobs = 4
+[interactive]
+	diffFilter = diff-highlight
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less

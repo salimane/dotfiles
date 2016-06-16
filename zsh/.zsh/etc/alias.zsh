@@ -41,7 +41,6 @@ alias sudo='sudo ' # Make sure aliases are expanded when using sudo.
 alias tmux='tmux -2' # force 256 color support in tmux
 alias tree="tree -A -I 'CVS|*~'"
 alias update-submodules='git submodule sync; git submodule update --init'
-# alias vagrant='/Applications/Vagrant/bin/vagrant'
 alias vdir='vdir --color=auto'
 alias wgethtml='wget -E -H -k -K -p -nd -o logwget.txt'
 

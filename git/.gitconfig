@@ -102,6 +102,7 @@
 	required = true
 [commit]
 	gpgsign = true
+	verbose = true
 [submodule]
 	fetchJobs = 4
 [interactive]

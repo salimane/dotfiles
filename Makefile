@@ -12,7 +12,8 @@ install:
 	ln -fs `pwd`/git/.gitconfig ~/.gitconfig
 	ln -fs `pwd`/git/.gitignore ~/.gitignore
 	ln -fs `pwd`/git/.gitattributes ~/.gitattributes
-	mkdir -p ~/bin && ln -fs `pwd`/bin ~/bin
+	if [[ -L ~/bin ]]; then unlink ~/bin; fi
+	ln -fs `pwd`/bin ~/bin
 	chmod +x ~/bin/*
 	mkdir -p ~/.zsh/cache
 	if test ! -f ~/.hub.zsh_completion; then cd ~/ && curl https://raw.github.com/defunkt/hub/master/etc/hub.zsh_completion -o .hub.zsh_completion; fi

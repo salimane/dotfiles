@@ -77,7 +77,7 @@ function prompt_precmd {
   fi
 
   PROMPT="
-$blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg}$(__docker_machine_ps1) in $cyan${PWD/#$HOME/~}%{$reset_color%}
+$blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
 $(virtualenv_info)$(prompt_char) $gray"
 
   #### right prompt

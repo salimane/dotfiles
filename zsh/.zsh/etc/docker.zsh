@@ -2,4 +2,4 @@
 # DOCKER #
 ##############
 
-eval "$(docker-machine env docker-vm)"
+# eval "$(docker-machine env docker-vm)"

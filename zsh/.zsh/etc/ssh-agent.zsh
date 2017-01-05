@@ -4,7 +4,7 @@ then
     rm -rf ~/.ssh-env
     ssh-agent > ~/.ssh-env
     source ~/.ssh-env
-    ssh-add
+    ssh-add -K
 else
     if [[ -f "$HOME/.ssh-env" ]]; then
         source ~/.ssh-env

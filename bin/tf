@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -e
+
+configFile=tf-state.conf
+
+function usage() {
+  echo "Usage: tf (action) [terraform options]"
+  echo
+  echo " Requires a $configFile file in the current directory. It might looks something like this:"
+  echo ""
+  echo "bucket=terraform-meltwater-platform-dev"
+  echo "key=platform-search/terraform.tfstate"
+  echo "region=eu-west-1"
+}
+
+
+# Usage: get_property FILE KEY
+function get_property {
+    prop=$(grep "^$2=" "$1" | cut -d'=' -f2)
+    if [[ -z "${prop// }" ]]; then
+        >&2 echo "property \"$2\" required on $configFile"
+        usage
+        exit 1
+    fi
+    echo ${prop}
+}
+
+if [ ! -f ./${configFile} ]; then
+  echo "No $configFile file found in the current folder"
+  usage
+  exit 1
+fi
+
+# Validate the input arguments
+if [ "$#" < 1 ]; then
+  usage
+  exit 1
+fi
+
+terraform_bucket_region=$(get_property "$configFile" "region")
+terraform_bucket_name=$(get_property "$configFile" "bucket")
+terraform_state_key=$(get_property "$configFile" "key")
+
+cat << EOM
+ Executing:
+ terraform remote config
+  -backend=S3
+  -backend-config="region=$terraform_bucket_region"
+  -backend-config="bucket=$terraform_bucket_name"
+  -backend-config="key=$terraform_state_key"
+EOM
+
+# Configure remote state storage
+terraform remote config \
+  -backend=S3 \
+  -backend-config="region=$terraform_bucket_region" \
+  -backend-config="bucket=$terraform_bucket_name" \
+  -backend-config="key=$terraform_state_key"
+
+terraform get
+
+# Execute the terraform action
+terraform $@

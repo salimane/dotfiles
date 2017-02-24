@@ -36,7 +36,7 @@ function prompt_char {
   command git branch >/dev/null 2>/dev/null && echo '±' && return
   hg root >/dev/null 2>/dev/null && echo '☿' && return
   svn info >/dev/null 2>/dev/null && echo '⚡' && return
-  echo '⚛'
+  echo '★'
 }
 
 function virtualenv_info {
@@ -78,7 +78,7 @@ function prompt_precmd {
 
   PROMPT="
 $blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
-$(virtualenv_info)$(prompt_char) $gray"
+$(virtualenv_info)%(?.$green.$red)$(prompt_char)$reset_color $gray"
 
   #### right prompt
   RPROMPT="${vcs_info_msg_0_}"

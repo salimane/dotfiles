@@ -33,7 +33,7 @@
 	editor = nano
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-  	autocrlf = input
+    autocrlf = input
 
 [alias]
 	st = "status -sb"
@@ -101,8 +101,10 @@
 	smudge = git-lfs smudge %f
 	required = true
 [commit]
-	gpgsign = false
+	gpgsign = true
 	verbose = true
+[gpg]
+	program = gpg
 [submodule]
 	fetchJobs = 4
 [interactive]

@@ -3,13 +3,6 @@
 ###########
 
 #alias make="CFLAGS='-Wall' make"
-alias acs='sudo apt-cache search'
-alias acsh='sudo apt-cache show'
-alias addkey='sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys'
-alias agd='sudo apt-get dist-upgrade -m -y --force-yes '
-alias agi='sudo apt-get install -m -y --force-yes '
-alias agu='sudo apt-get update'
-alias agud='sudo apt-get update && sudo apt-get dist-upgrade -m -y --force-yes '
 alias cd..='cd ..'
 alias cp='cp -i'
 alias dcrestart='docker-compose kill; docker-compose rm --force; docker-compose build && docker-compose up'
@@ -32,8 +25,6 @@ alias mv='mv -i'
 alias nano='nano -c'
 alias noascii="sed 's/.\\[[0-9][0-9]?m//g'"
 alias pgrep="\grep -P" # PCRE-compatible
-alias phpcs-fixer='phpcs-fixer --level=all --fixers=indentation,linefeed,trailing_spaces,php_closing_tag,short_tag,return,visibility,braces,phpdoc_params,eof_ending,extra_empty_lines,include,controls_spaces,elseif'
-alias phpunit='phpunit --coverage-text'
 alias quote="sed -Ee $'s/([ \'\"])/\\\\\\\\\\\1/g'"
 alias rm='rm -i'
 alias sed='sed -E'
@@ -58,14 +49,6 @@ EDITOR=`which-command nano`
 if [[ -f ~/bin/hub ]]; then
   eval "$(hub alias -s)"
 fi
-
-function TRAPINT {
-  # Store the current buffer in the history.
-  zle && print -s -r -- $BUFFER
-
-  # Return the default exit code so Zsh aborts the current command.
-  return $1
-}
 
 if [[ -f ~/.shell_aliases ]]; then
   . ~/.shell_aliases

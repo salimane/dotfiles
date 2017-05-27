@@ -8,7 +8,7 @@ typeset -U fpath
 fpath=(~/.zsh/completions ~/.zsh/functions  ~/.zsh/prompts $fpath)
 
 # Load Modules {{{
-autoload -Uz colors zmv compinit promptinit vcs_info zkbd history-search-end smart-insert-last-word modify-current-argument colors zed zcalc ignoreeof autopushd pushdignoredups pushdminus zsh-mime-setup tetris
+autoload -Uz colors zmv compinit promptinit vcs_info zkbd history-search-end modify-current-argument colors zed zcalc ignoreeof autopushd pushdignoredups pushdminus zsh-mime-setup
 colors
 compinit -d ~/.zsh/cache/zcompdump
 promptinit

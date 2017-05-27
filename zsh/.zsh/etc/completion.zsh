@@ -38,8 +38,3 @@ zstyle ':completion:complete-files:*' completer _files
 bindkey '^F' complete-files
 zstyle ':completion:*' menu select=0
 setopt list_ambiguous
-
-
-if brew command command-not-found-init > /dev/null; then
-  eval "$(brew command-not-found-init)";
-fi

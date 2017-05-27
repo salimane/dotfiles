@@ -2,36 +2,6 @@
 # PROMPT SETTINGS #
 ###################
 
-function __docker_machine_ps1 () {
-    local format=${1:- [%s]}
-    if test ${DOCKER_MACHINE_NAME}; then
-        local status_vm
-        if test ${DOCKER_MACHINE_PS1_SHOWSTATUS:-false} = true; then
-            status_machine=$(docker-machine status ${DOCKER_MACHINE_NAME})
-            case ${status_machine} in
-                Running)
-                    status_vm=' R'
-                    ;;
-                Stopping)
-                    status_vm=' R->S'
-                    ;;
-                Starting)
-                    status_vm=' S->R'
-                    ;;
-                Error|Timeout)
-                    status_vm=' E'
-                    ;;
-                *)
-                    # Just consider everything elase as 'stopped'
-                    status_vm=' S'
-                    ;;
-            esac
-        fi
-        printf -- "${format}" "${DOCKER_MACHINE_NAME}${status_vm}"
-    fi
-}
-
-
 function prompt_char {
   command git branch >/dev/null 2>/dev/null && echo '±' && return
   hg root >/dev/null 2>/dev/null && echo '☿' && return
@@ -78,7 +48,7 @@ function prompt_precmd {
 
   PROMPT="
 $blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
-$(virtualenv_info)%(?.$green.$red)$(prompt_char)$reset_color $gray"
+$(virtualenv_info)%(?.$green.$red)$(prompt_char)%{$reset_color%} $gray"
 
   #### right prompt
   RPROMPT="${vcs_info_msg_0_}"

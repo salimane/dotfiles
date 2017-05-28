@@ -14,6 +14,7 @@ alias egrep='egrep --color=auto'
 alias eject='drutil tray eject'
 alias fgrep='fgrep --color=auto'
 alias get='curl -O'
+alias git=hub
 alias grep=egrep
 alias grpe=grep
 alias info='info --vi-keys'

@@ -1,40 +1,3 @@
-[user]
-	name = Salimane Adjao Moustapha
-	email = me@salimane.com
-
-[help]
-	autocorrect = 1
-
-[rerere]
-	enabled = 1
-
-[color]
-	ui = auto
-
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-
-[core]
-	whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
-	editor = nano
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-    autocrlf = input
-
 [alias]
 	st = "status -sb"
 	ci = commit -s
@@ -48,68 +11,115 @@
 	amend = commit --amend -C HEAD
 	credit = commit --amend --author "$1 <$2>" -C HEAD
 	g = grep --break --heading --line-number
-
+[apply]
+	# Cleanup whitespace by default when apply patches.
+	whitespace = fix
 [branch]
 	autosetupmerge = true
-
 [branch "master"]
 	rebase = true
-
-[format]
-	pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
-
-[push]
- 	default = simple
-
-[github]
-	user = salimane
-
-[hub]
-	protocol = https
-	#host = my.example.org
-
+[color]
+	# Colour terminal command output when possible.
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[commit]
+	gpgsign = true
+	verbose = true
 [credential]
-  helper = /opt/boxen/bin/boxen-git-credential
-
+	# Use macOS Keychain to store HTTP passwords.
+	helper = osxkeychain
 [core]
-  excludesfile = /opt/boxen/config/git/gitignore
-
-[merge]
-	tool = diffmerge
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-
+	whitespace = fix,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
+	editor = nano
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	autocrlf = input
+	# Don't prompt for commit messages for merge commits.
+	mergeoptions = --no-edit
 [diff]
 	rename = copy
 	tool = diffmerge
-	compactionHeuristic = true
-
+	# Use the slower but better patience diff algorithm
+	algorithm = patience
+	# Use new diff algorithm to make e.g. function diffs look better.
+	compactionheuristic = true
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
-
-[mergetool]
-	keepBackup = false
-[grep]
-	extendRegexp = true
-	lineNumber = true
+[fetch]
+	# Always prune when fetching (and pulling).
+	prune = 1
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[commit]
-	gpgsign = true
-	verbose = true
+[format]
+	pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+[github]
+	user = salimane
+[gist]
+	# Open GitHub Gist in browser after submission.
+	browse = true
 [gpg]
 	program = gpg
-[submodule]
-	fetchJobs = 4
+[grep]
+	extendRegexp = true
+	lineNumber = true
+[help]
+	# Autocorrect mistyped commands.
+	autocorrect = 1
+[hub]
+	protocol = https
+	#host = my.example.org
 [interactive]
 	diffFilter = diff-highlight
+[merge]
+	tool = diffmerge
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+[mergetool]
+	keepBackup = false
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[push]
+	# Push to the set upstream branch being tracked by default.
+ 	default = simple
+[submodule]
+	fetchJobs = 4
+[rebase]
+	# Run `git stash` if needed before a `git rebase`
+	autoStash = true
+[rerere]
+	enabled = 1
+[url "git@github.com:"]
+	# Always use GitHub SSH protocol to push.
+	# Allows use of git:// for public repositories with push access
+	pushInsteadOf = git://github.com/
+[url "git@gitorious.org:"]
+	# Always use Gitorious SSH protocol to push.
+	# Allows use of git:// for public repositories with push access
+	# (which is often faster).
+	pushInsteadOf = git://gitorious.org/
+[user]
+	name = Salimane Adjao Moustapha
+	email = me@salimane.com
+[shell]
+	# Default SSH username.
+	username = salimane

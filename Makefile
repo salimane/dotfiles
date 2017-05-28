@@ -6,9 +6,13 @@ install:
 	mkdir -p $(HOME)/.gnupg && ln -fs $(DOTFILESDIR)/gnupg/sks-keyservers.netCA.pem $(HOME)/.gnupg/sks-keyservers.netCA.pem
 	if [[ -L $(HOME)/.zsh/etc ]]; then unlink $(HOME)/.zsh/etc; fi
 	mkdir -p $(HOME)/.zsh && ln -fs $(DOTFILESDIR)/zsh/.zsh/etc $(HOME)/.zsh/etc
+	mkdir -p $(HOME)/.rbenv && ln -fs $(DOTFILESDIR)/rb/default-gems $(HOME)/.rbenv/default-gems
 	ln -fs $(DOTFILESDIR)/wget/.wgetrc $(HOME)/.wgetrc
 	ln -fs $(DOTFILESDIR)/nano/.nanorc $(HOME)/.nanorc
 	ln -fs $(DOTFILESDIR)/postgresql/.psqlrc $(HOME)/.psqlrc
+	ln -fs $(DOTFILESDIR)/rb/.irbrc $(HOME)/.irbrc
+	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/.Brewfile
+	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/Brewfile
 	mkdir -p $(HOME)/.gradle && ln -fs $(DOTFILESDIR)/gradle/gradle.properties $(HOME)/.gradle/gradle.properties
 	ln -fs $(DOTFILESDIR)/valgrind/.valgrindrc $(HOME)/.valgrindrc
 	ln -fs $(DOTFILESDIR)/git/.gitconfig $(HOME)/.gitconfig

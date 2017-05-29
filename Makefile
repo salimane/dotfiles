@@ -2,6 +2,7 @@ DOTFILESDIR ?= $(shell pwd)
 
 install:
 	ln -fs $(DOTFILESDIR)/zsh/.zshrc $(HOME)/.zshrc
+	mkdir -p $(HOME)/.bundle && ln -fs $(DOTFILESDIR)/bundle/config $(HOME)/.bundle/config
 	mkdir -p $(HOME)/.gnupg && ln -fs $(DOTFILESDIR)/gnupg/gpg.conf $(HOME)/.gnupg/gpg.conf
 	mkdir -p $(HOME)/.gnupg && ln -fs $(DOTFILESDIR)/gnupg/sks-keyservers.netCA.pem $(HOME)/.gnupg/sks-keyservers.netCA.pem
 	if [[ -L $(HOME)/.zsh/etc ]]; then unlink $(HOME)/.zsh/etc; fi

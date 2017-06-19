@@ -25,7 +25,9 @@ source ~/.zsh/etc/options.zsh
 source ~/.zsh/etc/history.zsh
 source ~/.zsh/etc/gpg.zsh
 source ~/.zsh/etc/golang.zsh
+source ~/.zsh/etc/python.zsh
 source ~/.zsh/etc/ruby.zsh
+source ~/.zsh/etc/node.zsh
 source ~/.zsh/etc/vcs.zsh
 source ~/.zsh/etc/ssh-agent.zsh
 source ~/.zsh/etc/less.zsh
@@ -53,3 +55,10 @@ fi
 
 
 [[ -r ~/.zsh.local ]] && source ~/.zsh.local
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

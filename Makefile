@@ -12,6 +12,7 @@ install:
 	ln -fs $(DOTFILESDIR)/nano/.nanorc $(HOME)/.nanorc
 	ln -fs $(DOTFILESDIR)/postgresql/.psqlrc $(HOME)/.psqlrc
 	ln -fs $(DOTFILESDIR)/rb/.irbrc $(HOME)/.irbrc
+	mkdir -p $(HOME)/config && ln -fs $(DOTFILESDIR)/python/pep8 $(HOME)/config/pep8
 	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/.Brewfile
 	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/Brewfile
 	mkdir -p $(HOME)/.gradle && ln -fs $(DOTFILESDIR)/gradle/gradle.properties $(HOME)/.gradle/gradle.properties

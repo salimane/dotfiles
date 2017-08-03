@@ -18,6 +18,7 @@ zsh-mime-setup
 
 # load zsh configurations {{{
 source ~/.zsh/etc/env.zsh
+source ~/.zsh/etc/iex.zsh
 source ~/.zsh/etc/keybinding.zsh
 source ~/.zsh/etc/colors.zsh
 source ~/.zsh/etc/alias.zsh

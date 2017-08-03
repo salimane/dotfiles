@@ -18,6 +18,7 @@ alias git=hub
 alias grep=egrep
 alias grpe=grep
 alias info='info --vi-keys'
+alias ls='exa'
 alias la='ls -a'
 alias less='less --tab=4 --no-init --LONG-PROMPT --ignore-case --squeeze-blank-line -R'
 alias ll='ls -l'

@@ -49,8 +49,10 @@
 	autocrlf = input
 	# Don't prompt for commit messages for merge commits.
 	mergeoptions = --no-edit
+	sparseCheckout = true
 [diff]
 	rename = copy
+	renames = copies
 	tool = diffmerge
 	# Use the slower but better patience diff algorithm
 	algorithm = patience
@@ -85,10 +87,13 @@
 	#host = my.example.org
 [interactive]
 	diffFilter = diff-highlight
+[log]
+	decorate = full
 [merge]
 	tool = diffmerge
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	stat = true
 [mergetool]
 	keepBackup = false
 [mergetool "diffmerge"]
@@ -100,9 +105,14 @@
 	diff = diff-highlight | less
 [push]
 	# Push to the set upstream branch being tracked by default.
- 	default = simple
+	followTags = true
+	default = tracking
 [submodule]
 	fetchJobs = 4
+[stash]
+	showPatch = true
+[status]
+	showUntrackedFiles = all
 [rebase]
 	# Run `git stash` if needed before a `git rebase`
 	autoStash = true

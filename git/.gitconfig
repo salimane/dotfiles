@@ -1,3 +1,5 @@
+[advice]
+	statusHints = true
 [alias]
 	st = "status -sb"
 	ci = commit -s
@@ -11,16 +13,21 @@
 	amend = commit --amend -C HEAD
 	credit = commit --amend --author "$1 <$2>" -C HEAD
 	g = grep --break --heading --line-number
+	git = "!exec git"
 [apply]
 	# Cleanup whitespace by default when apply patches.
 	whitespace = fix
 [branch]
 	autosetupmerge = true
+	autosetuprebase = always
 [branch "master"]
 	rebase = true
 [color]
 	# Colour terminal command output when possible.
-	ui = auto
+	branch = auto
+	diff = auto
+	status = auto
+	ui = true
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -53,6 +60,8 @@
 [diff]
 	rename = copy
 	renames = copies
+	renamelimit = 0
+	mnemonicprefix = true
 	tool = diffmerge
 	# Use the slower but better patience diff algorithm
 	algorithm = patience
@@ -82,6 +91,8 @@
 [help]
 	# Autocorrect mistyped commands.
 	autocorrect = 1
+[http]
+	sslverify = true
 [hub]
 	protocol = https
 	#host = my.example.org
@@ -113,6 +124,9 @@
 	showPatch = true
 [status]
 	showUntrackedFiles = all
+	submoduleSummary = true
+[submodule]
+	fetchJobs = 4
 [rebase]
 	# Run `git stash` if needed before a `git rebase`
 	autoStash = true

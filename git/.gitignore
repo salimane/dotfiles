@@ -23,7 +23,6 @@ nbproject/
 #Erlang
 .eunit
 deps
-priv
 *.o
 *.beam
 #python
@@ -71,8 +70,6 @@ local_settings.py
 /.bundle
 /db/*.sqlite3*
 /log/*.log*
-/tmp/
-/.sass-cache/
 /public/uploads/
 /public/system/*
 /spec/tmp/*
@@ -97,8 +94,6 @@ rdoc
 pkg
 test/tmp
 test/version_tmp
-tmp
-pkg
 *.gem
 *.rbc
 lib/bundler/man
@@ -110,6 +105,4 @@ InstalledFiles
 .yardoc
 _yardoc
 .bundle
-/tmp/
-*.swp
 *~

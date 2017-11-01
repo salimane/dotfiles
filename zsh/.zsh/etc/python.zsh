@@ -10,3 +10,4 @@ if [[ -d "$PYENV_ROOT/shims" ]]; then
 fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export PYTHON_CONFIGURE_OPTS="--enable-shared"

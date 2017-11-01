@@ -28,6 +28,7 @@ source ~/.zsh/etc/gpg.zsh
 source ~/.zsh/etc/golang.zsh
 source ~/.zsh/etc/python.zsh
 source ~/.zsh/etc/ruby.zsh
+source ~/.zsh/etc/asdf.zsh
 source ~/.zsh/etc/node.zsh
 source ~/.zsh/etc/vcs.zsh
 source ~/.zsh/etc/ssh-agent.zsh
@@ -41,7 +42,7 @@ source ~/.zsh/etc/heroku.zsh
 source ~/.zsh/etc/aws_zsh_completer.zsh
 source ~/.zsh/etc/java.zsh
 source ~/.zsh/etc/docker.zsh
-source ~/.zsh/etc/asdf.zsh
+
 [[ -r /usr/local/share/zsh/site-functions/_aws ]] && source /usr/local/share/zsh/site-functions/_aws
 # }}}
 
@@ -63,3 +64,6 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/salimane/.nodenv/versions/7.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# added by travis gem
+[ -f /Users/salimane/.travis/travis.sh ] && source /Users/salimane/.travis/travis.sh

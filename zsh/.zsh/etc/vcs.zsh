@@ -1,18 +1,19 @@
+#!/bin/sh
 #######################
 #  VCS (git, hg, svn)  #
 #######################
 
-function parse_git_status {
+parse_git_status() {
   local st="$(command git status 2>/dev/null)"
   if [[ -n "$st" ]]; then
     local -a arr
     arr=(${(f)st})
-    if [[ $arr[2] =~ 'Your branch is' ]]; then
-      if [[ $arr[2] =~ 'Your branch is ahead' ]]; then
+    if [[ "${arr[2]}" =~ "Your branch is" ]]; then
+      if [[ "${arr[2]}" =~ "Your branch is ahead" ]]; then
         echo "$green↑"
-      elif [[ $arr[2] =~ 'Your branch is diverged' ]]; then
+      elif [[ "${arr[2]}" =~ "Your branch is diverged" ]]; then
         echo "$red↕"
-      elif [[ $arr[2] =~ 'Your branch is up-to-date' ]]; then
+      elif [[ "${arr[2]}" =~ "Your branch is up-to-date" ]] || [[ "${arr[2]}" =~ "Your branch is up to date" ]] ; then
         echo ""
       else
         echo "$yellow↓"

@@ -12,6 +12,7 @@ install:
 	ln -fs $(DOTFILESDIR)/nano/.nanorc $(HOME)/.nanorc
 	ln -fs $(DOTFILESDIR)/postgresql/.psqlrc $(HOME)/.psqlrc
 	ln -fs $(DOTFILESDIR)/rb/.irbrc $(HOME)/.irbrc
+	ln -fs $(DOTFILESDIR)/elixir/.iex.exs $(HOME)/.iex.exs
 	mkdir -p $(HOME)/config && ln -fs $(DOTFILESDIR)/python/pep8 $(HOME)/config/pep8
 	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/.Brewfile
 	ln -fs $(DOTFILESDIR)/homebrew/.Brewfile $(HOME)/Brewfile

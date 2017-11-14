@@ -23,4 +23,4 @@ Contact
 License
 -------
 
-These dot files are licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License). The full license text is available in [LICENSE](https://github.com/salimane/dotfiles/blob/master/LICENSE).
+These dotfiles are licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License). The full license text is available in [LICENSE](https://github.com/salimane/dotfiles/blob/master/LICENSE).

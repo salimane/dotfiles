@@ -4,6 +4,7 @@ tap "caskroom/eid"
 tap "caskroom/fonts"
 tap "caskroom/versions"
 tap "caskroom/drivers"
+tap "ethereum/ethereum"
 tap "github/bootstrap"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found"
@@ -31,6 +32,7 @@ brew "dirmngr"
 brew "docbook-xsl"
 brew "docbook"
 brew "exa"
+brew "ethereum"
 brew "fontconfig"
 brew "freetype"
 brew "gcc"
@@ -183,6 +185,7 @@ cask "sublime-text"
 cask "the-unarchiver" # http://unarchiver.c3.cx/unarchiver
 cask "tunnelblick" # http://code.google.com/p/tunnelblick/
 cask "vagrant"
+cask "visual-studio-code"
 cask "vlc" # http://www.videolan.org/vlc/index.html
 cask "xccello" # http://lingsdesigns.com/xccello/ trello app
 cask "xquartz"

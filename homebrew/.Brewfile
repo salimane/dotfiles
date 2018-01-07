@@ -153,10 +153,12 @@ cask "ccleaner" # http://www.piriform.com/mac/ccleaner
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
 cask "clipmenu" # http://www.clipmenu.com/
 cask "docker-edge" # https://docs.docker.com/docker-for-mac/
+cask "ethereum-wallet"
 cask "firefox"
 cask "gimp" # http://www.gimp.org/
 cask "github-desktop" # https://desktop.github.com/
 cask "google-chrome"
+cask "google-cloud-sdk"
 cask "hipchat"
 cask "imageoptim"
 cask "imgur"

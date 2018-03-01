@@ -138,6 +138,7 @@ brew "wifi-password"
 brew "write-good"
 brew "xpdf"
 brew "xz"
+brew "yarn"
 brew "yubico-piv-tool"
 brew "zsh"
 cask "1password"
@@ -184,6 +185,7 @@ cask "sourcetree"
 cask "spectacle"
 cask "spotify" # https://www.spotify.com/
 cask "sublime-text"
+cask "tableplus" # https://tableplus.io/
 cask "the-unarchiver" # http://unarchiver.c3.cx/unarchiver
 cask "tunnelblick" # http://code.google.com/p/tunnelblick/
 cask "vagrant"

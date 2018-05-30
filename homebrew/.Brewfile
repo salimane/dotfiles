@@ -4,6 +4,7 @@ tap "caskroom/eid"
 tap "caskroom/fonts"
 tap "caskroom/versions"
 tap "caskroom/drivers"
+tap "drone/drone"
 tap "ethereum/ethereum"
 tap "github/bootstrap"
 tap "homebrew/bundle"
@@ -31,6 +32,7 @@ brew "coreutils"
 brew "dirmngr"
 brew "docbook-xsl"
 brew "docbook"
+brew "drone"
 brew "exa"
 brew "ethereum"
 brew "fontconfig"
@@ -65,6 +67,10 @@ brew "jpeg"
 brew "jq"
 brew "jsoncpp"
 brew "jsonlint"
+brew "kubectl"
+brew "kubectx"
+brew "kubens"
+brew "kube-ps1"
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
 brew "libassuan"
@@ -90,8 +96,8 @@ brew "mpfr"
 brew "mr"
 brew "ncdu"
 brew "nmap"
-brew "node-build"
-brew "nodenv"
+brew "node-build", args: ['HEAD']
+brew "nodenv", args: ['HEAD']
 cask "osxfuse"
 brew "ntfs-3g"
 brew "oniguruma"
@@ -108,15 +114,15 @@ brew "pstree"
 brew "pth"
 brew "pv"
 brew "pwgen"
-brew "pyenv-virtualenv"
-brew "pyenv"
-brew "ruby-build"
-brew "rbenv"
-brew "rbenv-aliases"
-brew "rbenv-default-gems"
-brew "rbenv-use"
-brew "rbenv-vars"
-brew "rbenv-whatis"
+brew "pyenv-virtualenv", args: ['HEAD']
+brew "pyenv", args: ['HEAD']
+brew "ruby-build", args: ['HEAD']
+brew "rbenv", args: ['HEAD']
+brew "rbenv-aliases", args: ['HEAD']
+brew "rbenv-default-gems", args: ['HEAD']
+brew "rbenv-use", args: ['HEAD']
+brew "rbenv-vars", args: ['HEAD']
+brew "rbenv-whatis", args: ['HEAD']
 brew "readline"
 brew "ripgrep"
 brew "screen"
@@ -144,6 +150,7 @@ brew "zsh"
 cask "1password"
 cask "atom-beta"
 cask "adium" # https://adium.im/
+cask "aliwangwang" # alibaba messenger
 cask "android-studio"
 cask "appcleaner" # http://www.freemacsoft.net/appcleaner/
 cask "archiver"

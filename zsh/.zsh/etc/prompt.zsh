@@ -49,6 +49,7 @@ function prompt_precmd {
   PROMPT="
 $blue%n%{$reset_color%} at $yellow%m%{$reset_color%}$(git_user_email) ${ssh_msg} in $cyan${PWD/#$HOME/~}%{$reset_color%}
 $(virtualenv_info)%(?.$green.$red)$(prompt_char)%{$reset_color%} $gray"
+  PROMPT='$(kube_ps1)'$PROMPT
 
   #### right prompt
   RPROMPT="${vcs_info_msg_0_}"

@@ -11,11 +11,8 @@ tap "homebrew/bundle"
 tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "homebrew/dev-tools"
-tap "homebrew/dupes"
 tap "homebrew/formula-analytics"
 tap "homebrew/services"
-tap "homebrew/versions"
-tap "homebrew/x11"
 cask "java"
 brew "ack"
 brew "alexjs"
@@ -69,7 +66,6 @@ brew "jsoncpp"
 brew "jsonlint"
 brew "kubectl"
 brew "kubectx"
-brew "kubens"
 brew "kube-ps1"
 brew "launch_socket_server", restart_service: true
 brew "launchdns", restart_service: true
@@ -159,12 +155,10 @@ cask "caffeine" # http://lightheadsw.com/caffeine/
 cask "calibre" # http://calibre-ebook.com/
 cask "ccleaner" # http://www.piriform.com/mac/ccleaner
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
-cask "clipmenu" # http://www.clipmenu.com/
 cask "docker-edge" # https://docs.docker.com/docker-for-mac/
 cask "ethereum-wallet"
 cask "firefox"
 cask "gimp" # http://www.gimp.org/
-cask "github-desktop" # https://desktop.github.com/
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "hipchat"
@@ -201,5 +195,4 @@ cask "vlc" # http://www.videolan.org/vlc/index.html
 cask "xccello" # http://lingsdesigns.com/xccello/ trello app
 cask "xquartz"
 cask "whatsapp"
-mas "Twitter", id: 409789998
 mas "Xcode", id: 497799835

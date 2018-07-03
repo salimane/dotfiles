@@ -154,6 +154,7 @@ cask "arduino"
 cask "caffeine" # http://lightheadsw.com/caffeine/
 cask "calibre" # http://calibre-ebook.com/
 cask "ccleaner" # http://www.piriform.com/mac/ccleaner
+cask "chromedriver"
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
 cask "docker-edge" # https://docs.docker.com/docker-for-mac/
 cask "ethereum-wallet"

@@ -188,6 +188,7 @@ cask "spectacle"
 cask "spotify" # https://www.spotify.com/
 cask "sublime-text"
 cask "tableplus" # https://tableplus.io/
+cask "telegram"
 cask "the-unarchiver" # http://unarchiver.c3.cx/unarchiver
 cask "tunnelblick" # http://code.google.com/p/tunnelblick/
 cask "vagrant"
@@ -196,4 +197,3 @@ cask "vlc" # http://www.videolan.org/vlc/index.html
 cask "xccello" # http://lingsdesigns.com/xccello/ trello app
 cask "xquartz"
 cask "whatsapp"
-mas "Xcode", id: 497799835

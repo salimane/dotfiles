@@ -100,7 +100,6 @@ brew "openconnect"
 brew "openssl"
 brew "packer"
 brew "pcre"
-brew "phantomjs"
 brew "pinentry-mac"
 brew "pinentry"
 brew "pixman"
@@ -124,6 +123,7 @@ brew "screen"
 brew "sdl_image"
 brew "sdl"
 brew "shellcheck"
+brew "shfmt"
 brew "sphinx-doc"
 brew "sqlite"
 brew "ssh-copy-id"
@@ -156,6 +156,7 @@ cask "ccleaner" # http://www.piriform.com/mac/ccleaner
 cask "chromedriver"
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
 cask "docker-edge" # https://docs.docker.com/docker-for-mac/
+cask "eqmac"
 cask "ethereum-wallet"
 cask "firefox"
 cask "gimp" # http://www.gimp.org/
@@ -176,6 +177,7 @@ cask "libreoffice" # http://www.libreoffice.org/
 cask "licecap" # http://www.cockos.com/licecap/
 cask "mactracker"
 cask "pgadmin3" # http://www.pgadmin.org/
+cask "phantomjs"
 cask "psequel"
 cask "qbserve"
 cask "quicksilver" # http://qsapp.com/index.php

@@ -18,8 +18,6 @@ nbproject/
 *.dex
 # Java class files
 *.class
-# generated GUI files
-*R.java
 #Erlang
 .eunit
 deps

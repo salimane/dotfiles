@@ -148,6 +148,7 @@ cask "1password"
 cask "atom-beta"
 cask "adium" # https://adium.im/
 cask "aliwangwang" # alibaba messenger
+cask "anaconda"
 cask "android-studio"
 cask "appcleaner" # http://www.freemacsoft.net/appcleaner/
 cask "archiver"

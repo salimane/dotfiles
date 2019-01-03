@@ -42,6 +42,7 @@ source ~/.zsh/etc/heroku.zsh
 source ~/.zsh/etc/aws_zsh_completer.zsh
 source ~/.zsh/etc/java.zsh
 source ~/.zsh/etc/docker.zsh
+source ~/.zsh/etc/anaconda.zsh
 source ~/.zsh/etc/kube-ps1.zsh
 
 [[ -r /usr/local/share/zsh/site-functions/_aws ]] && source /usr/local/share/zsh/site-functions/_aws

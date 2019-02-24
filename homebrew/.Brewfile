@@ -6,6 +6,7 @@ tap "drone/drone"
 tap "ethereum/ethereum"
 tap "github/bootstrap"
 tap "homebrew/bundle"
+tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "homebrew/formula-analytics"
@@ -59,6 +60,7 @@ brew "jpeg"
 brew "jq"
 brew "jsoncpp"
 brew "jsonlint"
+brew "juju"
 brew "kops"
 brew "kubectl"
 brew "kubernetes-helm"
@@ -155,6 +157,7 @@ cask "calibre" # http://calibre-ebook.com/
 cask "ccleaner" # http://www.piriform.com/mac/ccleaner
 cask "chromedriver"
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
+cask "crossover"
 cask "docker-edge" # https://docs.docker.com/docker-for-mac/
 cask "eqmac"
 cask "ethereum-wallet"
@@ -171,7 +174,6 @@ cask "iterm2"
 cask "keybase"
 cask "little-snitch"
 cask "micro-snitch"
-cask "lastpass" # https://lastpass.com/
 cask "ledger-live"
 cask "libreoffice" # http://www.libreoffice.org/
 cask "licecap" # http://www.cockos.com/licecap/

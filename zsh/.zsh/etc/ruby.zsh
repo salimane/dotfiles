@@ -7,4 +7,9 @@ fi
 if [[ -d "$HOME/.rbenv/shims" ]]; then
   export PATH="$HOME/.rbenv/shims:$PATH"
 fi
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
+
+rbenv() {
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}

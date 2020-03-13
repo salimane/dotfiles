@@ -24,6 +24,7 @@ alias less='less --tab=4 --no-init --LONG-PROMPT --ignore-case --squeeze-blank-l
 alias ll='ls -la'
 alias mkdir='mkdir -p'
 alias mv='mv -i'
+alias mysqldump='mysqldump --column-statistics=0'
 alias nano='nano -c'
 alias noascii="sed 's/.\\[[0-9][0-9]?m//g'"
 alias pgrep="\grep -P" # PCRE-compatible

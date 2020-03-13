@@ -8,6 +8,13 @@ fi
 if [[ -d "$PYENV_ROOT/shims" ]]; then
   export PATH="$PYENV_ROOT/shims:$PATH"
 fi
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
+
+pyenv() {
+  eval "$(command pyenv init -)"
+  eval "$(command pyenv virtualenv-init -)"
+  pyenv "$@"
+}

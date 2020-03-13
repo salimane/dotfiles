@@ -1,5 +1,7 @@
 # Zsh configuration file
 
+# zmodload zsh/zprof # profiling start
+
 # Skip all this for non-interactive shells
 [[ -z "$PS1" ]] && return
 
@@ -10,13 +12,18 @@ fpath=(~/.zsh/completions ~/.zsh/functions  ~/.zsh/prompts $fpath)
 # Load Modules {{{
 autoload -Uz colors zmv compinit promptinit vcs_info zkbd history-search-end modify-current-argument colors zed zcalc ignoreeof autopushd pushdignoredups pushdminus zsh-mime-setup
 colors
-compinit -d ~/.zsh/cache/zcompdump
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zsh/cache/zcompdump)" ]; then
+  compinit
+else
+  compinit -C
+fi
 promptinit
 zsh-mime-setup
 # }}}
 
 
 # load zsh configurations {{{
+source ~/.zsh/etc/locale.zsh
 source ~/.zsh/etc/env.zsh
 source ~/.zsh/etc/iex.zsh
 source ~/.zsh/etc/keybinding.zsh
@@ -33,7 +40,6 @@ source ~/.zsh/etc/node.zsh
 source ~/.zsh/etc/vcs.zsh
 source ~/.zsh/etc/ssh-agent.zsh
 source ~/.zsh/etc/less.zsh
-source ~/.zsh/etc/locale.zsh
 source ~/.zsh/etc/prompt.zsh
 source ~/.zsh/etc/mail.zsh
 source ~/.zsh/etc/terminal.zsh
@@ -69,3 +75,5 @@ fi
 
 # added by travis gem
 [ -f /Users/salimane/.travis/travis.sh ] && source /Users/salimane/.travis/travis.sh
+
+# zprof # profiling end

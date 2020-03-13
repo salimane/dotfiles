@@ -1,6 +1,7 @@
 ---
 BUNDLE_PATH: "vendor/bundle"
-BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libxml2"
 BUNDLE_AUTO_INSTALL: "1"
 BUNDLE_JOBS: "8"
 BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/usr/local/opt/openssl"
+BUNDLE_BUILD__LIBV8: "–with-cxx=clang++"

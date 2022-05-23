@@ -1,16 +1,16 @@
 cask_args appdir: "/Applications"
-tap "caskroom/cask"
-tap "caskroom/eid"
-tap "caskroom/fonts"
 tap "drone/drone"
-tap "ethereum/ethereum"
 tap "github/bootstrap"
 tap "homebrew/bundle"
+tap "homebrew/cask"
+# tap "homebrew/cask-eid"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "homebrew/formula-analytics"
 tap "homebrew/services"
+tap "hashicorp/tap"
 cask "java"
 brew "ack"
 brew "alexjs"
@@ -28,7 +28,6 @@ brew "docbook-xsl"
 brew "docbook"
 brew "drone"
 brew "exa"
-brew "ethereum"
 brew "fontconfig"
 brew "freetype"
 brew "gcc"
@@ -41,7 +40,6 @@ brew "git-lfs"
 brew "glew"
 brew "glm"
 brew "gmp"
-brew "gnu-getopt"
 brew "gnu-tar"
 brew "gnupg"
 brew "gnutls"
@@ -50,7 +48,6 @@ brew "gprof2dot"
 brew "graphviz"
 brew "grc"
 brew "groovy"
-brew "heroku"
 brew "htop-osx"
 brew "hub"
 brew "icu4c"
@@ -94,7 +91,6 @@ brew "nmap"
 brew "node-build", args: ['HEAD']
 brew "nodenv", args: ['HEAD']
 cask "osxfuse"
-brew "ntfs-3g"
 brew "oniguruma"
 brew "openconnect"
 brew "openssl"
@@ -114,7 +110,6 @@ brew "pyenv", args: ['HEAD']
 brew "ruby-build", args: ['HEAD']
 brew "rbenv", args: ['HEAD']
 brew "rbenv-aliases", args: ['HEAD']
-brew "rbenv-default-gems", args: ['HEAD']
 brew "rbenv-use", args: ['HEAD']
 brew "rbenv-vars", args: ['HEAD']
 brew "rbenv-whatis", args: ['HEAD']
@@ -144,28 +139,19 @@ brew "yarn"
 brew "yubico-piv-tool"
 brew "zsh"
 cask "1password"
-cask "atom-beta"
-cask "adium" # https://adium.im/
-cask "aliwangwang" # alibaba messenger
-cask "anaconda"
 cask "android-studio"
 cask "appcleaner" # http://www.freemacsoft.net/appcleaner/
 cask "archiver"
-cask "arduino"
 cask "caffeine" # http://lightheadsw.com/caffeine/
 cask "calibre" # http://calibre-ebook.com/
 cask "ccleaner" # http://www.piriform.com/mac/ccleaner
 cask "chromedriver"
 cask "cinch" # http://www.irradiatedsoftware.com/cinch
-cask "crossover"
-cask "docker-edge" # https://docs.docker.com/docker-for-mac/
-cask "eqmac"
-cask "ethereum-wallet"
+# cask "docker" # https://docs.docker.com/docker-for-mac/
 cask "firefox"
 cask "gimp" # http://www.gimp.org/
 cask "google-chrome"
 cask "google-cloud-sdk"
-cask "hipchat"
 cask "imageoptim"
 cask "imgur"
 cask "intellij-idea-ce"
@@ -174,7 +160,6 @@ cask "iterm2"
 cask "keybase"
 cask "little-snitch"
 cask "micro-snitch"
-cask "ledger-live"
 cask "libreoffice" # http://www.libreoffice.org/
 cask "licecap" # http://www.cockos.com/licecap/
 cask "mactracker"
@@ -189,18 +174,14 @@ cask "slack"
 cask "smartgit"
 cask "sourcetree"
 cask "spectacle"
-cask "spotify" # https://www.spotify.com/
 cask "sublime-text"
 cask "tableplus" # https://tableplus.io/
 cask "telegram"
 cask "the-unarchiver" # http://unarchiver.c3.cx/unarchiver
 cask "tunnelblick" # http://code.google.com/p/tunnelblick/
-cask "vagrant"
 cask "visual-studio-code"
 cask "vlc" # http://www.videolan.org/vlc/index.html
 cask "xccello" # http://lingsdesigns.com/xccello/ trello app
-cask "xquartz"
 cask "yubico-yubikey-manager"
 cask "yubico-yubikey-personalization-gui"
 cask "yubico-yubikey-piv-manager"
-cask "whatsapp"

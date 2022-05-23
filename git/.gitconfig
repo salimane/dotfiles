@@ -57,6 +57,7 @@
 	# Don't prompt for commit messages for merge commits.
 	mergeoptions = --no-edit
 	sparseCheckout = true
+	hooksPath = /Users/salimane/.git/hooks
 [diff]
 	rename = copy
 	renames = copies
@@ -72,10 +73,6 @@
 [fetch]
 	# Always prune when fetching (and pulling).
 	prune = 1
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [format]
 	pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [github]
@@ -129,7 +126,7 @@
 	fetchJobs = 4
 [rebase]
 	# Run `git stash` if needed before a `git rebase`
-	autoStash = true
+	autoStash = false
 [rerere]
 	enabled = 1
 [url "ssh://git@github.com/"]
@@ -152,5 +149,7 @@
 [shell]
 	# Default SSH username.
 	username = salimane
-[pull]
-	rebase = true
+# [pull]
+# 	rebase = true
+[init]
+	defaultBranch = main

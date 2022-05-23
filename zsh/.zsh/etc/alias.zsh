@@ -14,7 +14,7 @@ alias egrep='egrep --color=auto'
 alias eject='drutil tray eject'
 alias fgrep='fgrep --color=auto'
 alias get='curl -O'
-alias git=hub
+# alias git=hub
 alias grep=egrep
 alias grpe=grep
 alias info='info --vi-keys'
@@ -37,6 +37,8 @@ alias tree="tree -A -I 'CVS|*~'"
 alias update-submodules='git submodule sync; git submodule update --init'
 alias vdir='vdir --color=auto'
 alias wgethtml='wget -E -H -k -K -p -nd -o logwget.txt'
+alias awsume=". awsume"
+
 
 # Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"

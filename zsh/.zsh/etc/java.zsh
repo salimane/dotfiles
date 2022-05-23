@@ -14,4 +14,4 @@ asdf_update_java_home() {
     echo "No java version set. Type `asdf list-all java` for all versions."
   fi
 }
-# asdf_update_java_home
+asdf_update_java_home
